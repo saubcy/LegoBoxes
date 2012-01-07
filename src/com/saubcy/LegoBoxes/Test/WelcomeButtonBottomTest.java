@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.saubcy.LegoBoxes.Activities.R;
 import com.saubcy.LegoBoxes.Activities.WelcomeButtonBottom;
@@ -36,6 +38,15 @@ implements WelcomeButtonBottom.SelectListener {
 		this.addButton(options);
 		
 		this.setListener(this);
+		
+		RelativeLayout rl = this.getRoot();
+		TextView tv = new TextView(this.getBaseContext());
+		tv.setText("hello WelcomeButtonBottomTest!!!!!!");
+		RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(  
+				RelativeLayout.LayoutParams.WRAP_CONTENT,  
+				RelativeLayout.LayoutParams.WRAP_CONTENT);
+		rlp.addRule(RelativeLayout.ALIGN_BOTTOM);
+		rl.addView(tv, rlp);
 	}
 
 	@Override

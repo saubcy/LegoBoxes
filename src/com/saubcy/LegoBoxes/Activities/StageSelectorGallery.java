@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.saubcy.LegoBoxes.ViewGroup.SlidingLayoutWithAnim;
 public abstract class StageSelectorGallery extends Activity 
 implements SlidingLayoutWithAnim.SelectListener {
 
+	private RelativeLayout Root = null;
 	private TableLayout Container = null;
 	private LinearLayout TipsContainer = null;
 	private SlidingLayoutWithAnim StageGellery = null;
@@ -56,6 +58,10 @@ implements SlidingLayoutWithAnim.SelectListener {
 	
 	public void setListener(StageSelectorGallery.SelectListener sl) {
 		this.listenner = sl;
+	}
+	
+	public RelativeLayout getRoot() {
+		return Root;
 	}
 	
 	public void loadStages(String[] stages) {
@@ -121,7 +127,6 @@ implements SlidingLayoutWithAnim.SelectListener {
 						LayoutParams.FILL_PARENT);
 		Container.setLayoutParams(tl);
 		Container.setGravity(Gravity.CENTER_HORIZONTAL);
-		setContentView(Container);
 
 		TipsContainer = new LinearLayout(this.getBaseContext());
 		TipsContainer.setOrientation(LinearLayout.VERTICAL);
@@ -147,6 +152,12 @@ implements SlidingLayoutWithAnim.SelectListener {
 		StageText.setGravity(Gravity.CENTER);
 		Container.addView(StageText, tl);
 		
+		Root = new RelativeLayout(this.getBaseContext());
+		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
+				RelativeLayout.LayoutParams.WRAP_CONTENT,  
+				RelativeLayout.LayoutParams.WRAP_CONTENT);
+		Root.addView(Container, rl);
+		setContentView(Root);
 	}
 	
 	public class StageInfo {

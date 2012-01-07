@@ -7,6 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.saubcy.LegoBoxes.Activities.R;
 import com.saubcy.LegoBoxes.Activities.StageSelectorGallery;
@@ -38,6 +40,15 @@ implements StageSelectorGallery.SelectListener {
 		this.setStageText("sadfsadfsdfsdf");
 		this.loadStages(stages);
 		this.setListener(this);
+		
+		RelativeLayout rl = this.getRoot();
+		TextView tv = new TextView(this.getBaseContext());
+		tv.setText("hello StageSelectorGalleryTest!!!!!!");
+		RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(  
+				RelativeLayout.LayoutParams.WRAP_CONTENT,  
+				RelativeLayout.LayoutParams.WRAP_CONTENT);
+		rlp.addRule(RelativeLayout.ALIGN_BOTTOM);
+		rl.addView(tv, rlp);
 	}
 
 	@Override

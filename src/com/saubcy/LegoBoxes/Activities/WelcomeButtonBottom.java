@@ -13,12 +13,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.saubcy.LegoBoxes.Animation.Factory;
 
 public abstract class WelcomeButtonBottom extends Activity {
 
 	private List<View> Buttons = null;
+	private RelativeLayout Root = null;
 	private LinearLayout Container = null;
 	private LinearLayout ButtonContainer = null;
 
@@ -26,7 +28,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 
 	private int ButtonSpan = 20;
 	private long AnimationOffset = 200L;
-	
+
 	private WelcomeButtonBottom.SelectListener listener = null;
 
 	public WelcomeButtonBottom() {
@@ -49,7 +51,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 		lp = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 
 				ButtonSpan);
 		ButtonContainer.addView(span, lp);
-		
+
 		View.OnClickListener listener = new View.OnClickListener() {
 			public void onClick(View v) {
 				FadeOutAnimation.setAnimationListener(
@@ -58,14 +60,14 @@ public abstract class WelcomeButtonBottom extends Activity {
 			}
 		};
 		button.setOnClickListener(listener);
-		
+
 		Buttons.add(button);
 	}
-	
+
 	public void setListener(WelcomeButtonBottom.SelectListener sl) {
 		this.listener = sl;
 	}
-	
+
 	public void fadeoutAllButtons() {
 		for ( int i=0; i<Buttons.size(); ++i ) {
 			Buttons.get(i).startAnimation(FadeOutAnimation);
@@ -88,6 +90,10 @@ public abstract class WelcomeButtonBottom extends Activity {
 		AnimationOffset = offset;
 	}
 
+	public RelativeLayout getRoot() {
+		return Root;
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -105,7 +111,6 @@ public abstract class WelcomeButtonBottom extends Activity {
 						LayoutParams.FILL_PARENT);
 		Container.setLayoutParams(lp);
 		Container.setGravity(Gravity.BOTTOM);
-		setContentView(Container);
 
 		ButtonContainer = new LinearLayout(this.getBaseContext());
 		ButtonContainer.setOrientation(LinearLayout.VERTICAL);
@@ -114,6 +119,13 @@ public abstract class WelcomeButtonBottom extends Activity {
 		lp.gravity = Gravity.BOTTOM;
 		ButtonContainer.setGravity(Gravity.BOTTOM);
 		Container.addView(ButtonContainer, lp);
+
+		Root = new RelativeLayout(this.getBaseContext());
+		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
+				RelativeLayout.LayoutParams.WRAP_CONTENT,  
+				RelativeLayout.LayoutParams.WRAP_CONTENT);
+		Root.addView(Container, rl);
+		setContentView(Root);
 	}
 
 	@Override
@@ -133,7 +145,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 			button.startAnimation(anim);
 		}
 	}
-	
+
 	protected class StartActivityAfterAnimation implements Animation.AnimationListener {
 		private View selectView;
 
@@ -147,7 +159,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 				button.setVisibility(View.INVISIBLE);
 				button.clearAnimation();
 			}
-			
+
 			if ( null != listener ) {
 				listener.notifySelect(selectView);
 			}
@@ -161,7 +173,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 
 		}
 	}
-	
+
 	public interface SelectListener {
 		public void notifySelect(View v);
 	}
