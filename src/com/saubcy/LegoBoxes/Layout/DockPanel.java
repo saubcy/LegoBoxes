@@ -118,7 +118,7 @@ public class DockPanel extends LinearLayout {
 
 		// Try to load values set by xml markup
 		if (attrs != null) {
-			String namespace = "http://com.MobileAnarchy.Android.Widgets";
+			String namespace = "http://com.saubcy.LegoBoxes.Layout";
 
 			animationDuration = attrs.getAttributeIntValue(namespace,
 					"animationDuration", 500);
