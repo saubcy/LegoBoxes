@@ -59,7 +59,7 @@ implements WelcomeButtonBottom.SelectListener {
 		} else if ( v == options ) {
 			Log.d("trace", "options");
 			Intent i = new Intent(this.getBaseContext(), 
-					Stub_01.class);
+					DockPanelTest.class);
 			this.startActivity(i);
 		}
 	}

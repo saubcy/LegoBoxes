@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ma="http://com.MobileAnarchy.Android.Widgets"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#333">
+
+	<LinearLayout android:id="@+id/LinearLayout"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:orientation="vertical" android:gravity="center">
+		<!-- Activity Content -->
+	</LinearLayout>
+
+	<com.saubcy.LegoBoxes.Layout.DockPanel
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_gravity="bottom" ma:dockPosition="bottom"
+		ma:contentLayoutId="@layout/dockpanel_horizontal_content"
+		ma:handleButtonDrawableResourceId="@drawable/bottom_dock_handle" />
+</FrameLayout>
