@@ -15,17 +15,18 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.saubcy.LegoBoxes.Interface.SelectListener;
 import com.saubcy.LegoBoxes.ViewGroup.SlidingLayoutWithAnim;
 
 public abstract class StageSelectorGallery extends Activity 
-implements SlidingLayoutWithAnim.SelectListener {
+implements SelectListener {
 
 	private RelativeLayout Root = null;
 	private TableLayout Container = null;
 	private LinearLayout TipsContainer = null;
 	private SlidingLayoutWithAnim StageGellery = null;
 	private TextView StageText = null;
-	private StageSelectorGallery.SelectListener listenner = null;
+	private SelectListener listenner = null;
 	
 	private int StageGalleryHeight = 264;
 	private int StageTextHeight = 20;
@@ -56,7 +57,7 @@ implements SlidingLayoutWithAnim.SelectListener {
 		StageText.setText(text);
 	}
 	
-	public void setListener(StageSelectorGallery.SelectListener sl) {
+	public void setListener(SelectListener sl) {
 		this.listenner = sl;
 	}
 	
@@ -174,7 +175,4 @@ implements SlidingLayoutWithAnim.SelectListener {
 		}
 	}
 	
-	public interface SelectListener {
-		public void notifySelect(String code);
-	}
 }

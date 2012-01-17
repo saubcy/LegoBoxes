@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="GBK" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <jardesc>
     <jar path="LegoBoxes/release/LegoBoxes.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/LegoBoxes/release/exportjar.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
@@ -14,6 +14,7 @@
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Activities"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Layout"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.ViewGroup"/>
+        <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Interface"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Animation"/>
     </selectedElements>
 </jardesc>

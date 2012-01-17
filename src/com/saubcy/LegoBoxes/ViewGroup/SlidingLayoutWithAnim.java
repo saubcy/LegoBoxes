@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.saubcy.LegoBoxes.Interface.SelectListener;
+
 public class SlidingLayoutWithAnim extends ViewGroup {
 	// ~--- static fields ------------------------------------------------------
 	
@@ -426,9 +428,4 @@ public class SlidingLayoutWithAnim extends ViewGroup {
 	public void setListener(SelectListener sl) {
 		this.listenner = sl;
 	}
-	
-	public interface SelectListener {
-		public void notifySelect(String code);
-	}
-	
 }

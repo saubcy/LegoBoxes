@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 import com.saubcy.LegoBoxes.Activities.R;
 import com.saubcy.LegoBoxes.Activities.WelcomeButtonBottom;
+import com.saubcy.LegoBoxes.Interface.SelectListener;
 
 public class WelcomeButtonBottomTest extends WelcomeButtonBottom 
-implements WelcomeButtonBottom.SelectListener {
+implements SelectListener {
 	
 	private ImageView newgame = null;
 	private ImageView options = null;
@@ -59,9 +60,16 @@ implements WelcomeButtonBottom.SelectListener {
 		} else if ( v == options ) {
 			Log.d("trace", "options");
 			Intent i = new Intent(this.getBaseContext(), 
-					DockPanelTest.class);
+//					DockPanelTest.class);
+					DifficultyListTest.class);
 			this.startActivity(i);
 		}
+	}
+
+	@Override
+	public void notifySelect(String code) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

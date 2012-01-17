@@ -6,15 +6,17 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.saubcy.LegoBoxes.Activities.R;
 import com.saubcy.LegoBoxes.Activities.StageSelectorGallery;
+import com.saubcy.LegoBoxes.Interface.SelectListener;
 
 public class StageSelectorGalleryTest extends StageSelectorGallery 
-implements StageSelectorGallery.SelectListener {
+implements SelectListener {
 	
 	public static int GalleryHeight = 264;
 	public static int TextHeight = 20;
@@ -68,9 +70,15 @@ implements StageSelectorGallery.SelectListener {
 
 	@Override
 	public void notifySelect(String code) {
-		Intent i = new Intent(this.getBaseContext(), Stub_01.class);
+		Intent i = new Intent(this.getBaseContext(), SplashSequenceTest.class);
 		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		i.putExtra("StageCode", code);
 		this.startActivity(i);
+	}
+
+	@Override
+	public void notifySelect(View v) {
+		// TODO Auto-generated method stub
+		
 	}
 }
