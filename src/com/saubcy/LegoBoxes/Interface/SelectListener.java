@@ -5,4 +5,5 @@ import android.view.View;
 public interface SelectListener {
 	public void notifySelect(View v);
 	public void notifySelect(String code);
+	public void notifySelect(int code);
 }

@@ -55,7 +55,8 @@ implements SelectListener {
 		if ( v == newgame ) {
 			Log.d("trace", "newgame");
 			Intent i = new Intent(this.getBaseContext(), 
-					StageSelectorGalleryTest.class);
+//					StageSelectorGalleryTest.class);
+					StageSelectorListTest.class);
 			this.startActivity(i);
 		} else if ( v == options ) {
 			Log.d("trace", "options");
@@ -68,6 +69,12 @@ implements SelectListener {
 
 	@Override
 	public void notifySelect(String code) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifySelect(int code) {
 		// TODO Auto-generated method stub
 		
 	}

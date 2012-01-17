@@ -50,5 +50,11 @@ implements SelectListener {
 	public void notifySelect(String code) {
 		
 	}
+
+	@Override
+	public void notifySelect(int code) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
