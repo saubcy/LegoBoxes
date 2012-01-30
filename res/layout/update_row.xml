@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <ImageView
+        android:id="@+id/row_preview"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/row_textInfo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo_2"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter" />
+	<TextView
+        android:id="@+id/row_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/row_preview"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/row_state"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/row_title"
+        android:layout_toRightOf="@+id/row_preview"
+        android:gravity="bottom"
+        android:lineSpacingExtra="-7dp"
+        android:lineSpacingMultiplier="1"
+        android:lines="1"
+        android:text="·"
+        android:textSize="25dp" />
+    <TextView
+        android:id="@+id/textDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/row_title"
+        android:layout_toRightOf="@+id/row_state"
+        android:gravity="center_vertical"
+        android:text="|"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/row_textInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/row_title"
+        android:layout_toRightOf="@+id/textDivider"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:text="textInfo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</RelativeLayout>

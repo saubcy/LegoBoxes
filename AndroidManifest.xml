@@ -3,6 +3,9 @@
     package="com.saubcy.LegoBoxes.Activities"
     android:versionCode="1"
     android:versionName="1.0" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 	<supports-screens 
 		android:smallScreens="true" 
 		android:normalScreens="true" 
@@ -33,6 +36,8 @@
         <activity android:name="com.saubcy.LegoBoxes.Test.DifficultyListTest"
                   android:label="@string/app_name"/>
         <activity android:name="com.saubcy.LegoBoxes.Test.StageSelectorListTest"
+                  android:label="@string/app_name"/>
+        <activity android:name="com.saubcy.LegoBoxes.Test.UpdateListTest"
                   android:label="@string/app_name"/>
     </application>
 

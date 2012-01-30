@@ -3,5 +3,5 @@
 
     <string name="hello">Hello World!</string>
     <string name="app_name">LegoBoxes</string>
-
+    <string name="row_info">Files: %1$d Size: %2$s</string>
 </resources>

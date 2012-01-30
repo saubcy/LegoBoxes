@@ -87,4 +87,10 @@ implements SelectListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void notifyQuick() {
+		// TODO Auto-generated method stub
+		
+	}
 }

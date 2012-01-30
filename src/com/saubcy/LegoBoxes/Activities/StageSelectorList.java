@@ -108,6 +108,9 @@ public class StageSelectorList extends ListActivity {
 
 			TextView text = (TextView)v.findViewById(text_id);
 			if (text != null) {
+				if ( null != listener ) {
+					listener.notifyQuick();
+				}
 				text.startAnimation(mButtonFlickerAnimation);
 				mButtonFlickerAnimation.setAnimationListener(
 						new EndActivityAfterAnimation(selectedLevel.code));

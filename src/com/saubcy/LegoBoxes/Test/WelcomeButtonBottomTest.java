@@ -62,7 +62,8 @@ implements SelectListener {
 			Log.d("trace", "options");
 			Intent i = new Intent(this.getBaseContext(), 
 //					DockPanelTest.class);
-					DifficultyListTest.class);
+//					DifficultyListTest.class);
+					UpdateListTest.class);
 			this.startActivity(i);
 		}
 	}
@@ -75,6 +76,12 @@ implements SelectListener {
 
 	@Override
 	public void notifySelect(int code) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyQuick() {
 		// TODO Auto-generated method stub
 		
 	}

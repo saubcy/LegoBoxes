@@ -22,6 +22,14 @@ public class AboutTemplate extends Activity {
 		return Root;
 	}
 	
+	public void setContentColor(int color) {
+		content.setTextColor(color);
+	}
+	
+	public void setLinkColor(int color) {
+		content.setLinkTextColor(color);
+	}
+	
 	public void setVersion(String info) {
 		this.vesrionInfo = info;
 	}

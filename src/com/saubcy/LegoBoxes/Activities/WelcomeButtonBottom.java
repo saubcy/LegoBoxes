@@ -38,6 +38,10 @@ public abstract class WelcomeButtonBottom extends Activity {
 		Buttons = new ArrayList<View>();
 	}
 
+	public void setSpan(int span) {
+		this.ButtonSpan = span;
+	}
+	
 	public void addButton(View button) {
 		if ( Buttons.contains(button) ) {
 			return;
@@ -56,6 +60,7 @@ public abstract class WelcomeButtonBottom extends Activity {
 
 		View.OnClickListener listener = new View.OnClickListener() {
 			public void onClick(View v) {
+				notifyInner();
 				FadeOutAnimation.setAnimationListener(
 						new StartActivityAfterAnimation(v));
 				fadeoutAllButtons();
@@ -161,6 +166,12 @@ public abstract class WelcomeButtonBottom extends Activity {
 				offset += AnimationOffset;
 			}
 			button.startAnimation(anim);
+		}
+	}
+	
+	private void notifyInner() {
+		if ( null != listener ) {
+			listener.notifyQuick();
 		}
 	}
 

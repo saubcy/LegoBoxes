@@ -88,6 +88,7 @@ public class DifficultyList extends Activity {
 
 		View.OnClickListener listener = new View.OnClickListener() {
 			public void onClick(View v) {
+				notifyInner();
 				v.startAnimation(mButtonFlickerAnimation);
 	            mFadeOutAnimation.setAnimationListener(new StartActivityAfterAnimation(v));
 	            fadeoutExcpet(v);
@@ -173,6 +174,12 @@ public class DifficultyList extends Activity {
 
 	}
 
+	private void notifyInner() {
+		if ( null != listener ) {
+			listener.notifyQuick();
+		}
+	}
+	
 	protected class StartActivityAfterAnimation implements Animation.AnimationListener {
 		private View selectView;
 

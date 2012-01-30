@@ -65,4 +65,10 @@ implements SelectListener {
 			Log.d("trace", "select level: " + level.name);
 		}
 	}
+
+	@Override
+	public void notifyQuick() {
+		// TODO Auto-generated method stub
+		
+	}
 }
