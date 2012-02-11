@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SelectListener;
 
-public class DifficultyList extends BaseActivity {
+public abstract class DifficultyList extends BaseActivity {
 
 	private List<View> Buttons = null;
 	private List<View> Texts = null;

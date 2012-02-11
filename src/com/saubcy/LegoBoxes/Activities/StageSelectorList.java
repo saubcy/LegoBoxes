@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SelectListener;
 
-public class StageSelectorList extends BaseListActivity {
+public abstract class StageSelectorList extends BaseListActivity {
 
 	private Animation mButtonFlickerAnimation;
 	private ArrayList<LevelMetaData> mLevelData;

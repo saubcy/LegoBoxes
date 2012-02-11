@@ -78,11 +78,13 @@ public class AnimationFactory {
 	}
 	
 	public static Animation getCentreRotate(Context context) {
-		Animation anima = new RotateAnimation(0, 360, 50, 50);
+		RotateAnimation anima = new RotateAnimation(0, 360, 
+				Animation.RELATIVE_TO_SELF, 0.5f,
+				Animation.RELATIVE_TO_SELF, 0.5f);
 		
 		anima.setInterpolator(AnimationUtils.loadInterpolator(context, 
 				android.R.anim.linear_interpolator));
-		anima.setDuration(15000);
+		anima.setDuration(4000);
 		anima.setRepeatCount(10000);
 		anima.setRepeatMode(Animation.RESTART);
 		

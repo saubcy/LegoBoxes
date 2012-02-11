@@ -21,7 +21,7 @@ import com.saubcy.LegoBoxes.Utils.AsynFolderDownloader.onDownloadListener;
 import com.saubcy.LegoBoxes.Utils.AsynImageLoader;
 import com.saubcy.LegoBoxes.Utils.AsynImageLoader.onImageListener;
 
-public class UpdateList extends BaseListActivity 
+public abstract class UpdateList extends BaseListActivity 
 implements onDownloadListener, onImageListener{
 
 	public interface DownloadHandler{

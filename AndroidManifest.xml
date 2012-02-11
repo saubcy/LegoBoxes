@@ -39,6 +39,9 @@
                   android:label="@string/app_name"/>
         <activity android:name="com.saubcy.LegoBoxes.Test.UpdateListTest"
                   android:label="@string/app_name"/>
+        <activity android:name="com.saubcy.LegoBoxes.Test.SplashRotateTest"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

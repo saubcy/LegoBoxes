@@ -61,8 +61,9 @@ implements SelectListener {
 					//					DifficultyListTest.class);
 					//					StageSelectorGalleryTest.class);
 					//					StageSelectorListTest.class);
-					StageSelectorListTest.class);
-			//					UpdateListTest.class);
+					//					StageSelectorListTest.class);
+					//					UpdateListTest.class);
+					SplashRotateTest.class);
 			this.startActivity(i);
 		} else if ( v == options ) {
 			Log.d("trace", "options");

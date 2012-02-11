@@ -5,7 +5,7 @@ import android.text.util.Linkify;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class AboutTemplate extends BaseActivity {
+public abstract class AboutTemplate extends BaseActivity {
 
 	private TextView content = null;
 	

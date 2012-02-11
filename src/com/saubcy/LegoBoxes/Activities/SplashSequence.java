@@ -11,7 +11,7 @@ import android.view.animation.Animation.AnimationListener;
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SplashOverListener;
 
-public class SplashSequence extends BaseActivity {
+public abstract class SplashSequence extends BaseActivity {
 	
 	private Animation fade_in = null;
 	private Animation fade_out = null;
