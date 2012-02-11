@@ -7,6 +7,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 
 public class AnimationFactory {
@@ -72,6 +73,18 @@ public class AnimationFactory {
 		anima.setRepeatCount(7);
 		anima.setRepeatMode(Animation.REVERSE);
 		anima.setFillAfter(true);
+		
+		return anima;
+	}
+	
+	public static Animation getCentreRotate(Context context) {
+		Animation anima = new RotateAnimation(0, 360, 50, 50);
+		
+		anima.setInterpolator(AnimationUtils.loadInterpolator(context, 
+				android.R.anim.linear_interpolator));
+		anima.setDuration(15000);
+		anima.setRepeatCount(10000);
+		anima.setRepeatMode(Animation.RESTART);
 		
 		return anima;
 	}

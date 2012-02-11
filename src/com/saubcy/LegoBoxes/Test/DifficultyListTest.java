@@ -19,8 +19,8 @@ implements SelectListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		this.setBackgroud(getResources().getDrawable(R.drawable
-				.welcome_button_bottom_background));
+		this.setBackground(R.drawable
+				.welcome_button_bottom_background);
 		this.setButtonBackground(getResources().getDrawable(R.drawable
 				.custom_toast_border));
 

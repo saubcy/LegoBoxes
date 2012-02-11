@@ -3,14 +3,11 @@ package com.saubcy.LegoBoxes.Activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,10 +16,9 @@ import android.widget.RelativeLayout;
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SelectListener;
 
-public abstract class WelcomeButtonBottom extends Activity {
+public abstract class WelcomeButtonBottom extends BaseActivity {
 
 	private List<View> Buttons = null;
-	private RelativeLayout Root = null;
 	private LinearLayout Container = null;
 	private LinearLayout ButtonContainer = null;
 	private ImageView header = null;
@@ -85,14 +81,6 @@ public abstract class WelcomeButtonBottom extends Activity {
 		}
 	}
 
-	public void setBackgroud(Drawable d) {
-		Root.setBackgroundDrawable(d);
-	}
-
-	public void setBackgroud(int resid) {
-		Root.setBackgroundResource(resid);
-	}
-
 	public void setButtonSpan(int span) {
 		ButtonSpan = span;
 	}
@@ -108,9 +96,6 @@ public abstract class WelcomeButtonBottom extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		loadViews();
 	}
 

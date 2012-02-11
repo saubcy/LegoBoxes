@@ -1,9 +1,9 @@
 package com.saubcy.LegoBoxes.Test;
 
-import com.saubcy.LegoBoxes.Activities.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.saubcy.LegoBoxes.Activities.R;
 
 public class DockPanelTest extends Activity {
 	@Override

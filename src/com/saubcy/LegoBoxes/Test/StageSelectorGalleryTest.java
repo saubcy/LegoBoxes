@@ -33,7 +33,7 @@ implements SelectListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		this.setBackgroud(R.drawable.stage_selector_gallery_background);
+		this.setBackground(R.drawable.stage_selector_gallery_background);
 		
 		ImageView iv = new ImageView(this.getBaseContext());
 		iv.setImageResource(R.drawable.stage_selector_gallery_tips);

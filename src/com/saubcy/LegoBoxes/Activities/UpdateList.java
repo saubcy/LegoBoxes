@@ -8,16 +8,11 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-import android.app.ListActivity;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.saubcy.LegoBoxes.Object.DownloadObject;
 import com.saubcy.LegoBoxes.Object.DownloadObject.State;
@@ -26,7 +21,7 @@ import com.saubcy.LegoBoxes.Utils.AsynFolderDownloader.onDownloadListener;
 import com.saubcy.LegoBoxes.Utils.AsynImageLoader;
 import com.saubcy.LegoBoxes.Utils.AsynImageLoader.onImageListener;
 
-public class UpdateList extends ListActivity 
+public class UpdateList extends BaseListActivity 
 implements onDownloadListener, onImageListener{
 
 	public interface DownloadHandler{
@@ -44,18 +39,12 @@ implements onDownloadListener, onImageListener{
 
 	private DownloadHandler handler = null;
 
-	private RelativeLayout Root = null;
-
 	private boolean isDownload = false;
 	private boolean isUpdate = false;
 
 	private File localFolder = null;
 	private AsynImageLoader asynImageLoader = null;
 	protected DownloadObjectAdapter adapter = null;
-
-	public RelativeLayout getRoot() {
-		return Root;
-	}
 
 	public void setRowLayoutID (int id) {
 		this.rowLayoutID = id;
@@ -100,10 +89,6 @@ implements onDownloadListener, onImageListener{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		init();
 		loadViews();
 	}
 
@@ -113,17 +98,10 @@ implements onDownloadListener, onImageListener{
 	}
 
 	private void loadViews() {
-		Root = new RelativeLayout(this.getBaseContext());
-		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
-				RelativeLayout.LayoutParams.FILL_PARENT,  
-				RelativeLayout.LayoutParams.FILL_PARENT);
-		ListView lv = new ListView(this);
-		lv.setId(android.R.id.list);
-		Root.addView(lv, rl);
-		setContentView(Root);
 	}
-
-	private void init() {
+	
+	@Override
+	protected void initBefore() {
 		asynImageLoader = new AsynImageLoader(this, this);
 		adapter = new DownloadObjectAdapter(UpdateList.this, 
 				rowLayoutID);

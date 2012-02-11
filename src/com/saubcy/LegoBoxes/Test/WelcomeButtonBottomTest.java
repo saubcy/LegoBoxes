@@ -14,7 +14,7 @@ import com.saubcy.LegoBoxes.Interface.SelectListener;
 
 public class WelcomeButtonBottomTest extends WelcomeButtonBottom 
 implements SelectListener {
-	
+
 	private ImageView newgame = null;
 	private ImageView options = null;
 
@@ -24,7 +24,7 @@ implements SelectListener {
 
 		// add background
 		//		this.setBackgroud(R.drawable.welcome_button_bottom_background);
-		this.setBackgroud(getResources().getDrawable(R.drawable
+		this.setBackground(getResources().getDrawable(R.drawable
 				.welcome_button_bottom_background));
 
 		//		add button
@@ -32,14 +32,14 @@ implements SelectListener {
 		newgame.setImageDrawable(getResources()
 				.getDrawable(R.drawable.welcome_button_bottom_newgame));
 		this.addButton(newgame);
-		
+
 		options = new ImageView(this.getBaseContext());
 		options.setImageDrawable(getResources()
 				.getDrawable(R.drawable.welcome_button_bottom_options));
 		this.addButton(options);
-		
+
 		this.setListener(this);
-		
+
 		RelativeLayout rl = this.getRoot();
 		TextView tv = new TextView(this.getBaseContext());
 		tv.setText("hello WelcomeButtonBottomTest!!!!!!");
@@ -55,14 +55,20 @@ implements SelectListener {
 		if ( v == newgame ) {
 			Log.d("trace", "newgame");
 			Intent i = new Intent(this.getBaseContext(), 
-//					StageSelectorGalleryTest.class);
+					//					StageSelectorGalleryTest.class);
+					//					StageSelectorListTest.class);
+					//					SplashSequenceTest.class);
+					//					DifficultyListTest.class);
+					//					StageSelectorGalleryTest.class);
+					//					StageSelectorListTest.class);
 					StageSelectorListTest.class);
+			//					UpdateListTest.class);
 			this.startActivity(i);
 		} else if ( v == options ) {
 			Log.d("trace", "options");
 			Intent i = new Intent(this.getBaseContext(), 
-//					DockPanelTest.class);
-//					DifficultyListTest.class);
+					//					DockPanelTest.class);
+					//					DifficultyListTest.class);
 					UpdateListTest.class);
 			this.startActivity(i);
 		}
@@ -71,19 +77,19 @@ implements SelectListener {
 	@Override
 	public void notifySelect(String code) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void notifySelect(int code) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void notifyQuick() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 }

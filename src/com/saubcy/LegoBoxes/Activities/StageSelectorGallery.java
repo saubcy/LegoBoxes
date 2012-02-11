@@ -1,14 +1,10 @@
 package com.saubcy.LegoBoxes.Activities;
 
-import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -18,10 +14,9 @@ import android.widget.TextView;
 import com.saubcy.LegoBoxes.Interface.SelectListener;
 import com.saubcy.LegoBoxes.ViewGroup.SlidingLayoutWithAnim;
 
-public abstract class StageSelectorGallery extends Activity 
+public abstract class StageSelectorGallery extends BaseActivity 
 implements SelectListener {
 
-	private RelativeLayout Root = null;
 	private TableLayout Container = null;
 	private LinearLayout TipsContainer = null;
 	private SlidingLayoutWithAnim StageGellery = null;
@@ -38,14 +33,6 @@ implements SelectListener {
 		this.StageTextHeight = th;
 	}
 
-	public void setBackgroud(Drawable d) {
-		Container.setBackgroundDrawable(d);
-	}
-
-	public void setBackgroud(int resid) {
-		Container.setBackgroundResource(resid);
-	}
-
 	public void  setTips(View v) {
 		LinearLayout.LayoutParams lp = 
 				new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -59,10 +46,6 @@ implements SelectListener {
 	
 	public void setListener(SelectListener sl) {
 		this.listenner = sl;
-	}
-	
-	public RelativeLayout getRoot() {
-		return Root;
 	}
 	
 	public void loadStages(String[] stages) {
@@ -114,9 +97,6 @@ implements SelectListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		loadViews();
 	}
 
@@ -153,12 +133,10 @@ implements SelectListener {
 		StageText.setGravity(Gravity.CENTER);
 		Container.addView(StageText, tl);
 		
-		Root = new RelativeLayout(this.getBaseContext());
 		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
-				RelativeLayout.LayoutParams.WRAP_CONTENT,  
-				RelativeLayout.LayoutParams.WRAP_CONTENT);
+				RelativeLayout.LayoutParams.FILL_PARENT,  
+				RelativeLayout.LayoutParams.FILL_PARENT);
 		Root.addView(Container, rl);
-		setContentView(Root);
 	}
 	
 	public class StageInfo {

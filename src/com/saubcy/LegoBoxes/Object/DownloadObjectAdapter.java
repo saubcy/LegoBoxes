@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import com.saubcy.LegoBoxes.Object.DownloadObject.State;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -13,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.saubcy.LegoBoxes.Object.DownloadObject.State;
 
 
 public class DownloadObjectAdapter extends SortableObjectAdapter{

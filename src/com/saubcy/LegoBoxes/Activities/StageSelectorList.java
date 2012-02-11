@@ -3,16 +3,13 @@ package com.saubcy.LegoBoxes.Activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,11 +17,8 @@ import android.widget.TextView;
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SelectListener;
 
-public class StageSelectorList extends ListActivity {
+public class StageSelectorList extends BaseListActivity {
 
-	private RelativeLayout Root = null;
-	private LinearLayout Container = null;
-	private ListView list = null;
 	private Animation mButtonFlickerAnimation;
 	private ArrayList<LevelMetaData> mLevelData;
 	private boolean mLevelSelected;
@@ -65,38 +59,20 @@ public class StageSelectorList extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		init();
 		loadViews();
 	}
 
-	private void init() {
+	@Override
+	protected void initBefore() {
 		mLevelSelected = false;
 		mButtonFlickerAnimation = 
 				AnimationFactory.getButtonFlicker(this);
 	}
 
 	private void loadViews() {
-		Root = new RelativeLayout(this.getBaseContext());
-		Container = new LinearLayout(this.getBaseContext());
-		Container.setOrientation(LinearLayout.VERTICAL);
-		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
-				RelativeLayout.LayoutParams.FILL_PARENT,  
-				RelativeLayout.LayoutParams.FILL_PARENT);
-		rl.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-		rl.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		Root.addView(Container, rl);
-
-		list = new ListView(this);
-		list.setId(android.R.id.list);
 		list.setDividerHeight(0);
 		list.setFooterDividersEnabled(false);
 		list.setHeaderDividersEnabled(false);
-		LinearLayout.LayoutParams lp = 
-				new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,
-						LayoutParams.FILL_PARENT);
-		Container.addView(list, lp);
-		
-		setContentView(Root);
 	}
 
 	@Override

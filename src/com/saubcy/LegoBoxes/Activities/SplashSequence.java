@@ -3,33 +3,22 @@ package com.saubcy.LegoBoxes.Activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.saubcy.LegoBoxes.Animation.AnimationFactory;
 import com.saubcy.LegoBoxes.Interface.SplashOverListener;
 
-public class SplashSequence extends Activity {
+public class SplashSequence extends BaseActivity {
 	
-	private RelativeLayout Root = null;
 	private Animation fade_in = null;
 	private Animation fade_out = null;
-	private ImageView bg = null;
 	private SplashOverListener listener = null;
 	private List<Drawable> logoList = 
 			new ArrayList<Drawable>();
 	private int index = -1;
-	
-	public RelativeLayout getRoot() {
-		return Root;
-	}
 	
 	public void setBackgroundColor(int color) {
 		Root.setBackgroundColor(color);
@@ -50,9 +39,6 @@ public class SplashSequence extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		loadViews();
 	}
 	
@@ -61,19 +47,12 @@ public class SplashSequence extends Activity {
 			listener.notifyOver();
 			return;
 		}
-		bg.setBackgroundDrawable(logoList.get(++index));
+		this.setBackground(logoList.get(++index));
 		bg.startAnimation(fade_in);
 	}
 	
 	private void loadViews() {
-		Root = new RelativeLayout(this.getBaseContext());
-		
-		RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(  
-				RelativeLayout.LayoutParams.FILL_PARENT,  
-				RelativeLayout.LayoutParams.FILL_PARENT);
-		bg = new ImageView(this);
-		bg.setBackgroundResource(R.drawable.logo_3);
-		Root.addView(bg, rl);
+		this.setBackground(R.drawable.logo_3);
 		
 		fade_in = AnimationFactory.getFadeIn(this);
 		fade_in.setDuration(2000);
@@ -109,6 +88,5 @@ public class SplashSequence extends Activity {
 			}
 		});
 		
-		this.setContentView(Root);
 	}
 }
