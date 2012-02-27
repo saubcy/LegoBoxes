@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 
 public abstract class BaseActivity extends Activity {
@@ -45,6 +46,7 @@ public abstract class BaseActivity extends Activity {
 				RelativeLayout.LayoutParams.FILL_PARENT,  
 				RelativeLayout.LayoutParams.FILL_PARENT);
 		bg = new ImageView(this);
+		bg.setScaleType(ScaleType.FIT_XY);
 		Root.addView(bg, rl);
 		
 		this.setContentView(Root);

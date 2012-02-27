@@ -47,13 +47,12 @@ public abstract class SplashSequence extends BaseActivity {
 			listener.notifyOver();
 			return;
 		}
-		this.setBackground(logoList.get(++index));
+		bg.setImageDrawable(logoList.get(++index));
+//		bg.setBackgroundDrawable(logoList.get(++index));
 		bg.startAnimation(fade_in);
 	}
 	
 	private void loadViews() {
-		this.setBackground(R.drawable.logo_3);
-		
 		fade_in = AnimationFactory.getFadeIn(this);
 		fade_in.setDuration(2000);
 		fade_out = AnimationFactory.getFadeOut(this);

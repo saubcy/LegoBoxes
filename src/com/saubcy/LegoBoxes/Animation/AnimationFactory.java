@@ -1,7 +1,6 @@
 package com.saubcy.LegoBoxes.Animation;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -42,9 +41,6 @@ public class AnimationFactory {
 	public static Animation getFadeOut(Context context) {
 		Animation anima = new AlphaAnimation(1.0f, 0.0f);
 		
-		if ( null == context ) {
-			Log.d("trace", "context null");
-		}
 		anima.setInterpolator(AnimationUtils.loadInterpolator(context, 
 				android.R.anim.accelerate_decelerate_interpolator));
 		anima.setDuration(1000);

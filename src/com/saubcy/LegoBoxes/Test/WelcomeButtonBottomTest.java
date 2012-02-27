@@ -63,7 +63,8 @@ implements SelectListener {
 					//					StageSelectorListTest.class);
 					//					StageSelectorListTest.class);
 					//					UpdateListTest.class);
-					SplashRotateTest.class);
+					//					SplashRotateTest.class);
+					SplashSequenceTest.class);
 			this.startActivity(i);
 		} else if ( v == options ) {
 			Log.d("trace", "options");

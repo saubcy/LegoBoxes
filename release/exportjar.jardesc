@@ -12,9 +12,11 @@
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Activities"/>
+        <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Utils"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Layout"/>
-        <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.ViewGroup"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Interface"/>
+        <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.ViewGroup"/>
+        <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Object"/>
         <javaElement handleIdentifier="=LegoBoxes/src&lt;com.saubcy.LegoBoxes.Animation"/>
     </selectedElements>
 </jardesc>
